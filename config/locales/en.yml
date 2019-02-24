@@ -30,4 +30,11 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  home: "Home"
+  english: "English"
+  vietnamese: "Vietnamese"
+  about: "About"
+  login: "Log in"
+  sign_up: "Sign Up"
+  book_tour: "book tour"
+  by: "by"
