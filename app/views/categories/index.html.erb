@@ -1,0 +1,27 @@
+<h1><%= t "list_category" %></h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">STT</th>
+      <th scope="col">Category</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @category.each do |category| %>
+    <tr>
+      <th scope="row"><%= category.id %></th>
+      <td><%= category.category %></td>
+      <td>
+        <%= link_to t("show"), category_path(category) %>
+        <%= link_to t("edit"), edit_category_path(category) %>
+        <%= link_to t("delete"), category_path(category),
+              method: :delete, data: { confirm: t("you_sure") } %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= link_to t("new_category"), new_category_path %>

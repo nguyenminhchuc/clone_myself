@@ -1,0 +1,31 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <div class="row">
+    <nav class="header_above">
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="contact_left"><%= link_to "0327464985", '#', class:"fa fa-phone-square" %></li>
+        <li class="contact_left"><%= link_to "nguyenminhchucit@gmail.com", '#',class:"fa fa-envelope" %></li>
+        <li><%= link_to "", '#', class:"fa fa-facebook-square" %></li>
+        <li><%= link_to "", '#', class:"fa fa-twitter-square" %></li>
+        <li><%= link_to "", '#', class:"fa fa-google-plus-square"%></li>
+        <li><%= link_to t("english"), locale:"en" %></li>
+        <li><%= link_to t("vietnamese"), locale:"vi" %></li>
+      </ul>
+    </nav>
+    </div>
+    <div class="row">
+    <%= link_to t("book_tour"), root_path, id: "logo" %>
+      <nav class="header_behind">
+        <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to t("home"), root_path %></li>
+          <li><%= link_to t("about"), about_path %></li>
+          <li><%= link_to t("category"), categories_path %></li>
+          <li><%= link_to t("login"), '#', class:'fa fa-user' %></li>
+          <li><%= link_to t("sign_up"), '#', class:"fa fa-lock" %></li>
+        </ul>
+      </nav>
+    </div>
+
+  </div>
+</header>
