@@ -1,0 +1,19 @@
+<div class="jumbotron">
+  <h3 class="display text-center">New Discount</h3>
+</div>
+<p>
+<%= form_with scope: :discount, url: discounts_path, local: true do |form| %>
+  <%= render 'error' %>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+    <p>
+      <%= form.label :discount %><br>
+      <%= form.text_field :discount %>
+    </p>
+
+    <p>
+      <%= form.submit  "create discount", class: "btn btn-primary" %>
+    </p>
+  <% end %>
+</div>
+  </div>
