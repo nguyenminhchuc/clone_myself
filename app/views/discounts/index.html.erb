@@ -1,0 +1,27 @@
+<h1> list discount </h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">STT</th>
+      <th scope="col">discount</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @discount.each do |discount| %>
+    <tr>
+      <th scope="row"><%= discount.id %></th>
+      <td><%= discount.discount %></td>
+      <td>
+        <%= link_to t("show"), discount_path(discount) %>
+        <%= link_to t("edit"), edit_discount_path(discount) %>
+        <%= link_to t("delete"), discount_path(discount),
+              method: :delete, data: { confirm: t("you_sure") } %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= link_to "new discount", new_discount_path %>
