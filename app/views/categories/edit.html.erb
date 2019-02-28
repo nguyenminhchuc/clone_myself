@@ -1,0 +1,19 @@
+<p>update categories</p>
+
+<%= form_with(model: @category, local: true) do |form| %>
+  <%= render 'error' %>
+
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <p>
+        <%= form.label :category %><br>
+        <%= form.text_field :category %>
+      </p>
+
+      <p>
+        <%= form.submit "update category", class: "btn btn-primary" %>
+      </p>
+    <% end %>
+  </div>
+  </div>
+  <%= link_to 'Back', categories_path %>
