@@ -31,7 +31,7 @@
         <div class="card-body">
           <div class="price">
             <p>from</p>
-            <p>$<%= t.price %></p>
+            <p><%= number_to_currency(t.price) %></p>
           </div>
           <h5 class="card-title"><%= t.tour_name %></h5>
           <%= link_to "Read more", admin_tour_path(t), class:"btn btn-primary" %>

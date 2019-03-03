@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_27_015358) do
+ActiveRecord::Schema.define(version: 2019_03_04_222357) do
 
   create_table "books", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -87,7 +87,7 @@ ActiveRecord::Schema.define(version: 2019_02_27_015358) do
     t.string "city"
     t.string "country"
     t.integer "price"
-    t.string "number_day"
+    t.integer "number_day"
     t.bigint "discount_id"
     t.bigint "category_id"
     t.datetime "created_at", null: false
