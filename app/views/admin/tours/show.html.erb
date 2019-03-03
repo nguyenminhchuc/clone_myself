@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @tour.tour_name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @tour.description %>
+</p>
+<p>
+  <strong>country:</strong>
+  <%= @tour.country %>
+</p>
+<p>
+  <strong>city:</strong>
+  <%= @tour.city %>
+</p>
+<p>
+  <strong>price:</strong>
+  <%= @tour.price %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @tour.image.to_s, class:'fixsize' %>
+</p>
+
+<%= link_to 'Edit', edit_admin_tour_path(@tour) %> |
+<%= link_to 'Back', admin_tours_path %>

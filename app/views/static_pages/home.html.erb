@@ -1,39 +1,43 @@
 <% provide :title, t("home") %>
-  <%= render 'layouts/header' %>
-  <div class="jumbotron">
-    <h1 class="display-4">Welcome to book tour</h1>
-  </div>
+<div class="wrap-header">
+    <%= render 'layouts/header' %>
+ <div class="container">
+   <div class="col-sm-12">
+     <div class="content">
+       <p class="name-tour">
+          Find your perfect
+       </p>
+       <p class="address">
+          Vacation
+       </p>
+       <button type="button" class="btn btn-primary">Read More</button>
+     </div>
+   </div>
+ </div>
+</div>
+
+<div class="welcome">
+  <p class="above"><%= t "welcome" %></p>
+  <p><%= t "slogan" %></p>
+</div>
+
 <div class="container">
   <div class="row">
-    <div class="col-sm-4">
+    <% @tour.each do |t| %>
+    <div class="col-sm-3">
       <div class="card" style="width: 18rem;">
-        <img src="https://www.fillmurray.com/300/300" class="card-img-top" alt="...">
+        <div class="discount"><%= t.discount.discount %> off</div>
+        <%= image_tag t.image.to_s, class:"sizeimage"%>
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <div class="price">
+            <p>from</p>
+            <p>$<%= t.price %></p>
+          </div>
+          <h5 class="card-title"><%= t.tour_name %></h5>
+          <%= link_to "Read more", admin_tour_path(t), class:"btn btn-primary" %>
         </div>
       </div>
     </div>
-    <div class="col-sm-4">
-      <div class="card" style="width: 18rem;">
-      <img src="https://www.fillmurray.com/300/300" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="card" style="width: 18rem;">
-        <img src="https://www.fillmurray.com/300/300" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-    </div>
+  <% end %>
   </div>
 </div>

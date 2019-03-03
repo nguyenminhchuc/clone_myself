@@ -23,3 +23,7 @@ en:
   tour: "Tour"
   book: "Book"
   user: "User"
+  welcome: "welcome to book tour"
+  slogan: "Travel is the only thing you buy that makes you rich"
+  list_tour: "List Tours"
+  create_tour: "create tour"

@@ -1,0 +1,38 @@
+<h1><%= t "list_tour" %></h1>
+<%= link_to "Back", admin_root_path%>
+<%= link_to "new Tour", new_admin_tour_path %>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Tour</th>
+      <th scope="col">Description</th>
+      <th scope="col">Price</th>
+      <th scope="col">Number days</th>
+      <th scope="col">City</th>
+      <th scope="col">Country</th>
+      <th scope="col">Image</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @tour.each do |t| %>
+    <tr>
+      <td><%= t.tour_name %></td>
+      <td><%= t.description %></td>
+      <td><%= t.price %></td>
+      <td><%= t.number_day %></td>
+      <td><%= t.city %></td>
+      <td><%= t.country %></td>
+      <td>
+         <%= image_tag t.image_url.to_s, class:"fixsize" %>
+      </td>
+      <td>
+        <%= link_to t("show"), admin_tour_path(t) %>
+        <%= link_to t("edit"), edit_admin_tour_path(t) %>
+        <%= link_to t("delete"), admin_tour_path(t),
+              method: :delete, data: { confirm: t("you_sure") } %>
+      </td>
+    </tr>
+  <% end %>
+
+  </tbody>
+</table>
