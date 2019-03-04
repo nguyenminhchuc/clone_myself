@@ -4,5 +4,8 @@ Rails.application.routes.draw do
   get  '/about', to: 'static_pages#about'
   resources :categories
   resources :discounts
+  namespace :admin do
+    root "dashboard#index"
+  end
   end
 end

@@ -19,4 +19,7 @@ vi:
   category: "Danh mục"
   create_category: "Tạo danh mục"
   discount_deleted: "Đã xóa mã giảm gía"
-
+  discount: " Mã giảm giá"
+  tour: "Chuyến du lịch"
+  book: "Đặt tour"
+  user: "Người dùng"
