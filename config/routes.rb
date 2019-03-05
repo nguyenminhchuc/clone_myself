@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :discounts
   namespace :admin do
     root "dashboard#index"
+    resources :tours
   end
   end
 end

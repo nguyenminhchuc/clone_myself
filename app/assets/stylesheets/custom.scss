@@ -4,8 +4,9 @@
 @import "font-awesome";
 @import "colors";
 
-body {
-  padding-top: 60px;
+* {
+  padding: 0;
+  margin: 0;
 }
 
 section {
@@ -19,7 +20,7 @@ textarea {
 .center {
   text-align: center;
   h1 {
-    margin-bottom: 10px;
+   /* margin-bottom: 10px;*/
   }
 }
 
@@ -61,6 +62,15 @@ p {
     color: $white;
     text-decoration: none;
   }
+}
+
+#logo {
+  animation: smallscale 1s forwards;
+}
+
+@keyframes smallscale {
+  from { transform: scale(2); opacity: 0}
+  to { transform: scale(1); opacity: 1 }
 }
 
 footer {
@@ -168,6 +178,7 @@ ul.nav .fa {
     margin-top: 0;
   }
 }
+
 @media (min-width: 768px) {
   .main {
     padding-right: 40px;
@@ -191,4 +202,98 @@ ul.nav .fa {
     width: 150px;
     border-radius: 50%;
   }
+}
+
+.text-muted {
+  color: #659453f7;
+  text-transform: capitalize;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.wrap-header {
+  position: relative;
+  background: url(slider1.jpg);
+  min-height: 600px;
+  top: 0px;
+  left: 0px;
+}
+
+.content {
+  position: absolute;
+  margin-top: 200px;
+  z-index: 3;
+  left: 20%;
+  color: #b4a9c1;
+  font-size: 30px;
+  font-family: Poppins;
+  font-weight: bold;
+}
+
+.name-tour {
+  font-size: 40px;
+  color: $white;
+}
+
+.name-tour {
+  animation: belowtoabove 1s forwards;
+}
+
+@keyframes belowtoabove {
+  from {transform: translateY(200px); opacity: 0}
+  to {transform: translateY(0); opacity: 1}
+}
+
+.address {
+  animation: lefttoright 2s forwards;
+}
+
+@keyframes lefttoright {
+  from {transform: translateX(100px); opacity: 0}
+  to {transform: translateX(0px); opacity: 1}
+}
+
+.card {
+  position: relative;
+}
+
+.discount {
+  position: absolute;
+  top: 10px;
+  left: 0px;
+  width: 60px;
+  height: 30px;
+  background: #F15734;
+  color: $white;
+  font-weight: bold;
+}
+
+.card-body .price {
+  font-weight: bold;
+  color: #1d8000;
+}
+
+.welcome {
+  width: 35%;
+  margin: auto;
+  .above {
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  p {
+    font-size: 16px;
+    text-align: center;
+  }
+}
+
+img.sizeimage {
+width: 238px;
+height: 215px;
+}
+
+.fixsize {
+  height: 200px;
+  width: 200px;
 }
