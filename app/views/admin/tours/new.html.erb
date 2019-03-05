@@ -1,5 +1,23 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+       <%= link_to t("book_tour"), root_path, id: "logo", class: "navbar-brand" %>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Dashboard", admin_root_path %></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 <div class="jumbotron">
-  <h3 class="display text-center">New Tour</h3>
+  <p class="display text-center">New Tour</p>
 </div>
 <p>
 <%= form_with scope: :tour, url: admin_tours_path, local: true do |form| %>
@@ -16,12 +34,14 @@
     </p>
     <p>
       <%= form.label :country %><br>
-      <%= form.text_field :country, class:"form-control" %>
+      <%= form.select(:country, [ 'Việt Nam', 'Hàn Quốc' ], { :class => 'select' }) %>
     </p>
+
     <p>
       <%= form.label :city %><br>
-      <%= form.text_field :city, class:"form-control" %>
+      <%= form.select(:city, [ 'Đằ nẵng', 'Huế', 'Ninh Bình', 'Hà Nội', 'Hồ Chí Minh', 'Quảng Ninh' ], { :class => 'select' }) %>
     </p>
+
     <p>
       <%= form.label :price %><br>
       <%= form.text_field :price, class:"form-control" %>
@@ -43,10 +63,9 @@
       <%= form.file_field :image %>
     </p>
     <p>
-      <%= form.submit  t"create_tour", class: "btn btn-primary" %>
+      <%= form.submit "create tour", class: "btn btn-primary" %>
     </p>
 
   <% end %>
     </div>
   </div>
-  <%= link_to "Back", admin_tours_path%>

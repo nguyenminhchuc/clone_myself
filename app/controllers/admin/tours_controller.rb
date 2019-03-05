@@ -13,7 +13,7 @@ class Admin::ToursController < ApplicationController
     @tour = Tour.new tour_params
 
     if @tour.save
-      redirect_to admin_tour_path @tour
+      redirect_to admin_tours_url
     else
       render :new
     end

@@ -1,0 +1,42 @@
+<p>
+<%= form_with(model: @book, local: true) do |form| %>
+  <%= render 'error' %>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+    <p>
+      <%= form.label :name %><br>
+      <%= form.text_field :name, class:"form-control" %>
+    </p>
+    <p>
+      <%= form.label :address %><br>
+      <%= form.text_field :address, class:"form-control" %>
+    </p>
+    <p>
+      <%= form.label :telephone %><br>
+      <%= form.text_field :telephone, class:"form-control" %>
+    </p>
+
+     <p>
+      <%= form.label :number_user %><br>
+      <%= form.text_field :number_user, class:"form-control" %>
+    </p>
+
+    <p>
+      <%= form.text_field :status, :value => '1', class:"hidden" %>
+    </p>
+    <p>
+      <%= form.text_field :tour_id, :value => @id_tour, class:"hidden" %>
+    </p>
+    <p>
+      <%= form.text_field :user_id, :value => '1', class:"hidden" %>
+    </p>
+
+    <p>
+      <%= form.submit  "update book", class: "btn btn-primary" %>
+    </p>
+
+  <% end %>
+    </div>
+  </div>
+
+  <%= link_to 'Back', admin_tour_path %>

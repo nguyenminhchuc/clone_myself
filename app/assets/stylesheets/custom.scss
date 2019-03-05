@@ -123,7 +123,7 @@ ul.nav .fa {
   }
 }
 .navbar-right li.contact_left .fa-phone-square{
-  padding-right: 450px;
+  padding-right: 440px;
 }
 
 .sub-header {
@@ -296,4 +296,30 @@ height: 215px;
 .fixsize {
   height: 200px;
   width: 200px;
+}
+
+.content-above {
+  position: absolute;
+  top: 450px;
+  right: 10px;
+  height: 150px;
+  width: 300px;
+  background: #386CC1;
+  color: $white;
+  .price {
+    background: #294573;
+    height: 50px;
+    text-align: center;
+  }
+  .from {
+    height: 90px;
+    background: #386CC1;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+  }
+}
+
+.wrap-form {
+  margin-top: 150px;
 }

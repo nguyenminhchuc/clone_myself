@@ -10,7 +10,7 @@ class Tour < ApplicationRecord
   validates :country, presence: true
   validates :city, presence: true
   validates :price, presence: true, numericality: true
-  validates :number_day, presence: true
+  validates :number_day, presence: true, numericality: true
   validates :image, presence: true
 
   mount_uploader :image, ImageUploader

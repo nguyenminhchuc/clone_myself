@@ -1,4 +1,26 @@
-<h1><%= t "list_tour" %></h1>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+       <%= link_to t("book_tour"), root_path, id: "logo", class: "navbar-brand" %>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Dashboard", admin_root_path %></li>
+        <li><%= link_to "new Tour", new_admin_tour_path %></li>
+        <li><a href="#">Help</a></li>
+      </ul>
+      <form class="navbar-form navbar-right">
+        <input type="text" class="form-control" placeholder="Search...">
+      </form>
+    </div>
+  </div>
+</nav>
 <%= link_to "Back", admin_root_path%>
 <%= link_to "new Tour", new_admin_tour_path %>
 <table class="table">
@@ -26,9 +48,8 @@
          <%= image_tag t.image_url.to_s, class:"fixsize" %>
       </td>
       <td>
-        <%= link_to t("show"), admin_tour_path(t) %>
-        <%= link_to t("edit"), edit_admin_tour_path(t) %>
-        <%= link_to t("delete"), admin_tour_path(t),
+        <%= link_to t("edit"), edit_admin_tour_path(t), class:"btn btn-primary" %>
+        <%= link_to t("delete"), admin_tour_path(t), class:"btn btn-danger",
               method: :delete, data: { confirm: t("you_sure") } %>
       </td>
     </tr>
