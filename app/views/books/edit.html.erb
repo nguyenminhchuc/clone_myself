@@ -28,7 +28,7 @@
       <%= form.text_field :tour_id, :value => @id_tour, class:"hidden" %>
     </p>
     <p>
-      <%= form.text_field :user_id, :value => '1', class:"hidden" %>
+      <%= form.text_field :user_id, :value => current_user.id, class:"hidden" %>
     </p>
 
     <p>
@@ -39,4 +39,3 @@
     </div>
   </div>
 
-  <%= link_to 'Back', admin_tour_path %>

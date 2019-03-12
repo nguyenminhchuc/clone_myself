@@ -1,0 +1,12 @@
+<% if user_signed_in? %>
+  <span id="form-comment">
+    <%= form_for [tour, comment_new] do |f| %>
+      <%= f.hidden_field :parent_id, value: parent_id %>
+      <%= f.hidden_field :tour_id, value: tour.id %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+      <%= f.text_area :content, placeholder: t("tours.show.compose"),
+        required: true, class: "form-control" %>
+      <%= f.submit t("tours.show.comment"), class: "btn btn-xs btn-custom2" %>
+    <% end %>
+  </span>
+<% end %>

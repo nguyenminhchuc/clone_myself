@@ -2,7 +2,13 @@ class Admin::ToursController < ApplicationController
   before_action :find_tour_id, only: %i(edit show update destroy)
 
   def index
+    # @q = Tour.ransack(params[:q])
     @tour = Tour.all
+    # @tour = @q.result
+    if params[:search]
+      @search_term = params[:search]
+      @tour = @tour.search_by(@search_term)
+    end
   end
 
   def new
@@ -19,7 +25,12 @@ class Admin::ToursController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @supports = Supports::Tour.new @post
+    @comment = Comment.new
+    @comments = @tour.comments
+
+  end
 
   def update
     if @tour.update tour_params
@@ -37,6 +48,8 @@ class Admin::ToursController < ApplicationController
       flash[:danger] = t "delete_fail"
     end
   end
+
+
 
   private
 

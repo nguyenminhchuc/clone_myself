@@ -1,3 +1,33 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+       <%= link_to t("book_tour"), root_path, id: "logo", class: "navbar-brand" %>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="navbar-form navbar-right">
+        <%= search_form_for @q do |f| %>
+          <%= f.search_field :category_cont %>
+          <%= f.submit %>
+        <% end %>
+      </li>
+        <li><%= link_to "Dashboard", admin_root_path %></li>
+        <li><%= link_to "New Category", new_category_path %></li>
+        <li><a href="#">Help</a></li>
+      </ul>
+     <!--  <form class="navbar-form navbar-right">
+        <input type="text" class="form-control" placeholder="Search...">
+      </form> -->
+
+    </div>
+  </div>
+</nav>
 <h1><%= t "list_category" %></h1>
 
 <table class="table">
@@ -24,4 +54,3 @@
   </tbody>
 </table>
 
-<%= link_to t("new_category"), new_category_path %>

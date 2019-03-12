@@ -1,4 +1,4 @@
-<div class="wrap-header" style="background: url(<%= @tour.image.to_s %>);">
+<div class="wrap-header" style="background: url(<%= @tour.image.to_s %>)">
     <%= render 'layouts/header' %>
  <div class="container">
    <div class="col-sm-12">
@@ -9,6 +9,9 @@
        <p class="address">
           <%= @tour.city %> <%= @tour.country %>
        </p>
+
+       <%= button_to 'Like', tour_likes_path(@tour), method: :post %>
+       <p><%= @tour.likes.count %> <%= (@tour.likes.count) == 1 ? 'Like' : 'Likes'%></p>
        <%= link_to "Book now", new_book_path(id: @tour.id), class:"btn btn-primary"  %>
      </div>
      <div class="content-above">
@@ -36,3 +39,5 @@
   <strong>Time:</strong>
   <%= @tour.number_day %> Days
 </p>
+
+

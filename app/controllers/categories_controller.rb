@@ -2,7 +2,11 @@ class CategoriesController < ApplicationController
   before_action :find_category_id, only: %i(edit show update destroy)
 
   def index
-    @category = Category.all
+    # @category = Category.all
+
+
+    @q = Category.ransack(params[:q])
+    @category = @q.result
   end
 
   def new

@@ -3,6 +3,8 @@ class DiscountsController < ApplicationController
 
   def index
     @discount = Discount.all
+    # @q = Discount.ransack(params[:q])
+    # @discount = @q.result
   end
 
   def new
@@ -13,6 +15,7 @@ class DiscountsController < ApplicationController
     @discount = Discount.new discount_params
 
     if @discount.save
+      flash[:success] = ('successfully_created')
       redirect_to discounts_url
     else
       render :new

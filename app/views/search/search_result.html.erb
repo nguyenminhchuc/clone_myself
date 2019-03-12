@@ -1,0 +1,24 @@
+    <%= render 'layouts/header' %>
+
+<div class="container">
+  <h2><%= @found %> / <%= @all %></h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>name tour</th>
+        <th>city</th>
+        <th>country</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @tours.each do |tour| %>
+        <tr>
+          <td><%= link_to tour.tour_name,admin_tour_path(tour) %></td>
+          <td><%= tour.city %></td>
+          <td><%= tour.country %></td>
+          <td><%= image_tag tour.image_url.to_s, class:"fixsize" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

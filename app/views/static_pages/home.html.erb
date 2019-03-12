@@ -15,7 +15,7 @@
    </div>
  </div>
 </div>
-
+<%= react_component('hellomessage') %>
 <div class="welcome">
   <p class="above"><%= t "welcome" %></p>
   <p><%= t "slogan" %></p>
@@ -26,7 +26,7 @@
     <% @tour.each do |t| %>
     <div class="col-sm-3">
       <div class="card" style="width: 18rem;">
-        <div class="discount"><%= t.discount.discount %> off</div>
+        <div class="discount"><%= t.discount.discount %> % off</div>
         <%= image_tag t.image.to_s, class:"sizeimage"%>
         <div class="card-body">
           <div class="price">
@@ -41,3 +41,8 @@
   <% end %>
   </div>
 </div>
+
+
+<!--  -->
+
+<!-- link that opens popup -->

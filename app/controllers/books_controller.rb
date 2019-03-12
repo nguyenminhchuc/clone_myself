@@ -1,23 +1,23 @@
 class BooksController < ApplicationController
   before_action :find_book_tour_id, only: %i(edit show update destroy)
+  before_action :id_tour
 
   def index
-    @id_tour = params[:id];
-    @book = Book.all
-    @tour = Tour.all
+    @book = Book.where(user_id: @id_user)
+    @tour = Tour.where(id: @id_tour)
+
   end
 
   def new
     @book = Book.new
-    @id_tour = params[:id];
   end
 
   def create
     @book = Book.new book_tour_params
-
     if @book.save
       flash[:success] = "successful tour bookings"
-      redirect_to root_url
+      redirect_to admin_tour_path(1)
+      # redirect_to root_url
     else
       render :new
     end
@@ -55,5 +55,10 @@ class BooksController < ApplicationController
     return if @book
     flash[:danger] = t "not_found"
     redirect_to root_url
+  end
+
+  def id_tour
+    @id_tour = params[:id]
+    @id_user = params[:id_user]
   end
 end

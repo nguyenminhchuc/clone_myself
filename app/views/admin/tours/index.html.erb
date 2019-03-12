@@ -15,14 +15,17 @@
         <li><%= link_to "new Tour", new_admin_tour_path %></li>
         <li><a href="#">Help</a></li>
       </ul>
-      <form class="navbar-form navbar-right">
+     <!--  <form class="navbar-form navbar-right">
         <input type="text" class="form-control" placeholder="Search...">
-      </form>
+      </form> -->
+
+      <%= form_for "", url: admin_tours_path, role: "search",method: :get  do %>
+                 <%= text_field_tag :search, @search_term, placeholder: "Search.."%>
+               <% end %>
     </div>
   </div>
 </nav>
-<%= link_to "Back", admin_root_path%>
-<%= link_to "new Tour", new_admin_tour_path %>
+
 <table class="table">
   <thead>
     <tr>
@@ -48,7 +51,7 @@
          <%= image_tag t.image_url.to_s, class:"fixsize" %>
       </td>
       <td>
-        <%= link_to t("edit"), edit_admin_tour_path(t), class:"btn btn-primary" %>
+        <%= link_to t("edit"), edit_admin_tour_path(id: current_user.id), class:"btn btn-primary" %>
         <%= link_to t("delete"), admin_tour_path(t), class:"btn btn-danger",
               method: :delete, data: { confirm: t("you_sure") } %>
       </td>
